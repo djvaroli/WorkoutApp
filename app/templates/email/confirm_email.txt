@@ -1,0 +1,13 @@
+Dear {{ user.username }},
+
+Thank you for joining our community of people working towards a healthier and more enjoyable life!
+
+You are one step of away from completing your profile and starting your workout journey!
+All you have to do is click the link below or copy and paste it into your browser!
+
+{{ url_for('auth.confirm_email', token=token, _external=True) }}
+
+
+Sincerely,
+
+The WorkoutApp Team

@@ -1,0 +1,24 @@
+<div class="exercise-head">
+    <h1 class="exercise-name">{{ exercise.name }}</h1>
+    <a class="delete-button">Delete</a>
+</div>
+<hr>
+
+<div id="progressions">
+    <div class="progression-titles">
+        <div class="progression-entry title">Sets</div>
+        <div class="progression-entry">Reps</div>
+        <div class="progression-entry">Weight</div>
+        <div class="progression-entry">Duration</div>
+    </div>
+    <hr>
+    {% for progression in exercise.ordered_progressions() %}
+        {% include '_progression.html' %}
+    {% endfor %}
+    <hr>
+    <a class="edit-button">Edit</a>
+    {% if form %}
+    {{ wtf.quick_form(form) }}
+    <br>
+    {% endif %}
+</div>

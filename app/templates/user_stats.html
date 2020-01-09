@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+    {% for user in users %}
+        <div>
+            Name: {{ user.username }}. Visits: {{ user.visits }}
+        </div>
+    {% endfor %}
+    <div>
+        Num Users: {{ num_users }}. Total Visits: {{ total_visits }}
+    </div>
+{% endblock %}
