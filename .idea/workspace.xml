@@ -3,43 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3362e521-09d2-452f-959f-53c58afb4b02" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/auth/email.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/email.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/auth/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/auth/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/progressions.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/progressions.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/_exercise.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/_exercise.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/_progression.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/_progression.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/email/confirm_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/email/confirm_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/email/confirm_email.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/email/confirm_email.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/email/reset_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/email/reset_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/email/reset_password.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/email/reset_password.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/exercise.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/exercise.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/user_stats.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/user_stats.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/workout_app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/workout_app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/workout_app.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/workout_app.log.1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/workout_app.log.10" beforeDir="false" afterPath="$PROJECT_DIR$/logs/workout_app.log.10" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/workout_app.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/logs/workout_app.log.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/workout_app.log.3" beforeDir="false" afterPath="$PROJECT_DIR$/logs/workout_app.log.3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/workout_app.log.4" beforeDir="false" afterPath="$PROJECT_DIR$/logs/workout_app.log.4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/workout_app.log.5" beforeDir="false" afterPath="$PROJECT_DIR$/logs/workout_app.log.5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/workout_app.log.6" beforeDir="false" afterPath="$PROJECT_DIR$/logs/workout_app.log.6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/workout_app.log.7" beforeDir="false" afterPath="$PROJECT_DIR$/logs/workout_app.log.7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/workout_app.log.8" beforeDir="false" afterPath="$PROJECT_DIR$/logs/workout_app.log.8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/workout_app.log.9" beforeDir="false" afterPath="$PROJECT_DIR$/logs/workout_app.log.9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/SQLAlchemy-1.3.12-py3.7.egg-info/PKG-INFO" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/SQLAlchemy-1.3.12-py3.7.egg-info/PKG-INFO" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/setuptools-40.8.0-py3.7.egg" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/setuptools-40.8.0-py3.7.egg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sqlalchemy/cprocessors.cpython-37m-darwin.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sqlalchemy/cprocessors.cpython-37m-darwin.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sqlalchemy/cresultproxy.cpython-37m-darwin.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sqlalchemy/cresultproxy.cpython-37m-darwin.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sqlalchemy/cutils.cpython-37m-darwin.so" beforeDir="false" afterPath="$PROJECT_DIR$/venv/lib/python3.7/site-packages/sqlalchemy/cutils.cpython-37m-darwin.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/workout_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/workout_app.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +80,7 @@
       <updated>1578376275143</updated>
       <workItem from="1578376276347" duration="6936000" />
       <workItem from="1578495113876" duration="8993000" />
-      <workItem from="1578585115236" duration="24433000" />
+      <workItem from="1578585115236" duration="24762000" />
     </task>
     <servers />
   </component>
