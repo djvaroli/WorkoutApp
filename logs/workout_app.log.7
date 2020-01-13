@@ -1,4 +1,4 @@
-2020-01-08 14:43:51,769 ERROR: Exception on /user_stats [GET] [in /Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py:1891]
+2020-01-09 08:58:46,674 ERROR: Exception on /user/daniel [GET] [in /Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/main/routes.py", line 148, in user_stats
-    return render_template('user_stats.html', users = users, num_users=num_users, total_visits=total_visits)
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/main/routes.py", line 46, in user
+    return render_template('user.html', user=user)
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/templating.py", line 138, in render_template
     ctx.app.jinja_env.get_or_select_template(template_name_or_list),
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
@@ -32,12 +32,28 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/templates/user_stats.html", line 1, in template
-    {% extend 'base.html' %}
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/templates/user.html", line 18, in template
+    {% endblock %}
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/environment.py", line 497, in _parse
     return Parser(self, source, name, encode_filename(filename)).parse()
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/parser.py", line 901, in parse
     result = nodes.Template(self.subparse(), lineno=1)
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/parser.py", line 268, in parse_block
+    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/parser.py", line 883, in subparse
+    rv = self.parse_statement()
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/parser.py", line 130, in parse_statement
+    return getattr(self, 'parse_' + self.stream.current.value)()
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/parser.py", line 212, in parse_if
+    node.body = self.parse_statements(('name:elif', 'name:else',
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/parser.py", line 165, in parse_statements
+    result = self.subparse(end_tokens)
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/parser.py", line 883, in subparse
     rv = self.parse_statement()
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/parser.py", line 144, in parse_statement
@@ -48,6 +64,25 @@ Traceback (most recent call last):
     self.fail(' '.join(message), lineno)
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/parser.py", line 59, in fail
     raise exc(msg, lineno, self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'extend'.
-2020-01-08 14:46:15,274 INFO: Workout App startup [in /Users/danielvaroli/Desktop/personal_website/workout_app/app/__init__.py:74]
-2020-01-08 14:46:50,371 INFO: Workout App startup [in /Users/danielvaroli/Desktop/personal_website/workout_app/app/__init__.py:74]
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
+2020-01-09 08:59:22,654 ERROR: Exception on /edit_profile [GET] [in /Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/main/routes.py", line 133, in edit_profile
+    form.about_me.data = current_user.about_me
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/werkzeug/local.py", line 348, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'about_me'

@@ -1,4 +1,4 @@
-2020-01-09 09:49:43,436 ERROR: Exception on /index [GET] [in /Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py:1891]
+2020-01-09 15:59:29,528 ERROR: Exception on /user_stats [GET] [in /Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -14,8 +14,8 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/main/routes.py", line 39, in index
-    exercises = current_user.get_exercises().all()
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/main/routes.py", line 154, in user_stats
+    return render_template('user_stats.html', users = users, num_users=num_users, total_visits=total_visits)
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
     ctx.app,
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
@@ -28,12 +28,12 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
     raise value.with_traceback(tb)
-  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/templates/index.html", line 2, in top-level template code
-    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/templates/user_stats.html", line 1, in top-level template code
+    {% extends 'base.html' %}
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1005, in render
     return concat(self.root_render_func(self.new_context(vars)))
-  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/templates/index.html", line 17, in root
-    {% endfor %}
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/templates/user_stats.html", line 14, in root
+    {% block scripts %}
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/templates/base.html", line 14, in root
     <span class="icon-bar"></span>
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 10, in root
@@ -41,13 +41,33 @@ Traceback (most recent call last):
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block_doc
     {% block body -%}
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 39, in block_html
-  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 92, in block_body
-  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/templates/base.html", line 85, in block_content
-  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/templates/index.html", line 30, in block_app_content
-    href="{{url_for('static', filename='index.css')}}">
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 90, in block_body
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/templates/base.html", line 47, in block_navbar
+    {% endwith %}
   File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/jinja2/environment.py", line 430, in getattr
     return getattr(obj, attribute)
 jinja2.exceptions.UndefinedError: 'user' is undefined
-2020-01-09 09:50:09,293 INFO: Workout App startup [in /Users/danielvaroli/Desktop/personal_website/workout_app/app/__init__.py:74]
-2020-01-09 09:51:45,853 INFO: Workout App startup [in /Users/danielvaroli/Desktop/personal_website/workout_app/app/__init__.py:74]
-2020-01-09 09:56:25,417 INFO: Workout App startup [in /Users/danielvaroli/Desktop/personal_website/workout_app/app/__init__.py:74]
+2020-01-09 16:00:43,421 INFO: Workout App startup [in /Users/danielvaroli/Desktop/personal_website/workout_app/app/__init__.py:79]
+2020-01-09 16:18:45,338 INFO: Workout App startup [in /Users/danielvaroli/Desktop/personal_website/workout_app/app/__init__.py:79]
+2020-01-09 16:18:58,273 ERROR: Exception on /delete_user [GET] [in /Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/venv/lib/python3.7/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/danielvaroli/Desktop/personal_website/workout_app/app/main/routes.py", line 166, in delete_user
+    response = user.delete()
+AttributeError: 'NoneType' object has no attribute 'delete'
+2020-01-09 16:21:45,306 INFO: Workout App startup [in /Users/danielvaroli/Desktop/personal_website/workout_app/app/__init__.py:79]
+2020-01-09 19:48:18,655 INFO: Workout App startup [in /Users/danielvaroli/Desktop/personal_website/workout_app/app/__init__.py:79]
+2020-01-09 19:49:44,130 INFO: Workout App startup [in /Users/danielvaroli/Desktop/personal_website/workout_app/app/__init__.py:79]

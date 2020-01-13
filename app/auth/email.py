@@ -20,3 +20,10 @@ def send_confirm_email(user):
                recipients=[user.email],
                text_body=render_template('email/confirm_email.txt',user=user,token=token),
                html_body=render_template('email/confirm_email.html',user=user,token=token))
+
+def send_new_user_email(user):
+    send_email(_('[WorkoutApp] New User Registration'),
+               sender=current_app.config['ADMINS'][0],
+               recipients=[current_app.config['ADMINS'][1]],
+               text_body=render_template('email/new_user.txt', user=user),
+               html_body=render_template('email/new_user.html', user=user))

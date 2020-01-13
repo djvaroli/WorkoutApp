@@ -7,8 +7,7 @@ from app.auth import bp
 from app.auth.forms import LoginForm, RegistrationForm, \
     ResetPasswordRequestForm, ResetPasswordForm
 from app.models import User
-from app.auth.email import send_password_reset_email, send_confirm_email
-
+from app.auth.email import send_password_reset_email, send_confirm_email, send_new_user_email
 
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
@@ -26,7 +25,6 @@ def login():
             return redirect(url_for('auth.login'))
 
         login_user(user, remember=form.remember_me.data)
-        user.visits += 1
         db.session.commit()
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
@@ -47,13 +45,14 @@ def register():
         return redirect(url_for('main.index'))
     form = RegistrationForm()
     if form.validate_on_submit():
-        user = User(username=form.username.data.lower(), email=form.email.data.lower())
+        user = User(username=form.username.data.lower(), email=form.email.data.lower(), name=form.name.data)
         user.set_password(form.password.data)
         user.visits = 0
         db.session.add(user)
         db.session.commit()
         flash(_('Thank you for registering! Please confirm your email adress by following the link sent to your email!'))
         send_confirm_email(user)
+        send_new_user_email(user)
         return redirect(url_for('auth.login'))
     return render_template('auth/register.html', title=_('Register'),
                            form=form)

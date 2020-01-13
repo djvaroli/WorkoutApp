@@ -5,7 +5,7 @@ from flask_login import current_user, login_required
 from flask_babel import _, get_locale
 from guess_language import guess_language
 from app import db
-from app.main.forms import EditProfileForm, ExerciseForm, ProgressionForm
+from app.main.forms import EditProfileForm, ExerciseForm, ProgressionForm, ProgressionFormMental
 from app.models import User, Exercise, Progression
 # from app.translate import translate
 from app.main import bp
@@ -18,17 +18,24 @@ def before_request():
         db.session.commit()
     g.locale = str(get_locale())
 
-
 @bp.route('/', methods=['GET', 'POST'])
+def start_page():
+    if current_user.is_authenticated:
+        return redirect(url_for('main.index'))
+    return redirect(url_for('auth.login'))
+
 @bp.route('/home', methods=['GET', 'POST'])
 @bp.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
+    current_user.visits += 1
+    db.session.commit()
+
     form = ExerciseForm()
     if form.validate_on_submit():
         sameNameExercise = Exercise.query.filter_by(user_id = current_user.id, name=form.name.data).first()
         if sameNameExercise is None:
-            exercise = Exercise(name=form.name.data, author = current_user)
+            exercise = Exercise(name=form.name.data, author = current_user, type=form.type.data)
             db.session.add(exercise)
             db.session.commit()
             flash(_('Exercise added succesfully'))
@@ -55,25 +62,36 @@ def exercise(exercise_name):
         exercise_name = exercise_name.replace('%40', '@')
 
     exercise = Exercise.query.filter_by(user_id=current_user.id).filter_by(name=exercise_name).first_or_404()
-    form = ProgressionForm()
+    if exercise.type == 'mental':
+        form = ProgressionFormMental()
 
-    if form.validate_on_submit():
-        sets = form.sets.data
-        reps = form.sets.data
-        weight = form.weight.data
-        duration = form.duration.data
-        print('WEIGHT,DURATION',weight,duration)
-        sameProgression = Progression.query.filter_by(sets = sets, reps = reps, weight = weight, duration = duration, exercise_id = exercise.id).first()
-        if sameProgression is None:
+        if form.validate_on_submit():
+            description = form.description.data
             progression = Progression(exercise = exercise,
-                                      exercise_id=exercise.id,
-                                      sets = sets,
-                                      reps = reps,
-                                      weight= weight,
-                                      product= float(form.sets.data) * float(form.reps.data))
+                                          exercise_id=exercise.id,description=description)
             db.session.add(progression)
             db.session.commit()
-            flash(_('Entry added!'))
+        flash(_('Entry added!'))
+    else:
+        form = ProgressionForm()
+
+        if form.validate_on_submit():
+            sets = form.sets.data
+            reps = form.sets.data
+            weight = form.weight.data
+            duration = form.duration.data
+            sameProgression = Progression.query.filter_by(sets = sets, reps = reps, weight = weight, duration = duration, exercise_id = exercise.id).first()
+            if sameProgression is None:
+                progression = Progression(exercise = exercise,
+                                          exercise_id=exercise.id,
+                                          sets = sets,
+                                          reps = reps,
+                                          weight= weight,
+                                          duration=duration,
+                                          product= float(form.sets.data) * float(form.reps.data))
+                db.session.add(progression)
+                db.session.commit()
+                flash(_('Entry added!'))
 
     return render_template('exercise.html',exercise=exercise,form = form)
 
@@ -148,6 +166,14 @@ def user_stats():
         for user in users:
             total_visits += user.visits
         return render_template('user_stats.html', users = users, num_users=num_users, total_visits=total_visits)
-    flash('Tsk Tsk Tsk, trying to acces pages you shouldnt? Santa (and an administrator) have been notified of your misdemeanor.')
+    flash('This page is currently unavailable!')
     return redirect(url_for('main.index'))
+
+@bp.route('/delete_user')
+@login_required
+def delete_user():
+    username = request.args.get('username')
+    user = User.query.filter_by(username=username).first()
+    response = user.delete()
+    return response
 

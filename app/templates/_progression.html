@@ -1,9 +1,13 @@
 
 <div class="progression progression{{progression.progression_status}}" id="progression-{{ progression.id }}">
-    <div class="progression-entry">{{ progression.sets }}</div>
-    <div class="progression-entry">{{ progression.reps }}</div>
-    <div class="progression-entry">{{ progression.weight }}</div>
-    <div class="progression-entry">{{ progression.duration }}</div>
+    {% if progression.sets %}
+        <div class="progression-entry notSelectable">{{ progression.sets }}</div>
+        <div class="progression-entry notSelectable">{{ progression.reps }}</div>
+        <div class="progression-entry notSelectable">{{ progression.weight }}</div>
+        <div class="progression-entry notSelectable">{{ progression.duration }}</div>
+    {% else %}
+        <div class="progression-text notSelectable">{{ progression.description }}</div>
+    {% endif %}
 </div>
 
 

@@ -1,15 +1,22 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 a {
     text-decoration: none;
     color: black;
 }
 
 .exercise-head {
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
     width: 100%;
+    margin-bottom: 2rem;
 }
 
 .exercise-name {
     display: initial;
+    margin-top: 0;
 }
 
 .progression-titles {
@@ -17,26 +24,42 @@ a {
     justify-content: space-evenly;
 }
 .delete-button {
-    width: 10rem;
-    text-align: center;
-    padding: 1rem 2rem;
-    float: right;
-    background-color: #f8f17f;
-    border: 1px solid #333;
-    border-radius: 3rem;
-    transition: all 0.1s ease-in-out;
+    background-color: #f7817eb3;
 }
 
 .delete-button:hover {
+    background-color: #f7817e;
+}
+.add-button {
+    background-color: rgba(134, 194, 50, 0.65);
+}
+
+.add-button:hover {
+    background-color: rgba(134, 194, 50, 0.8);
+
+}
+
+.custom-button {
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+    padding: 1rem 2rem;
+    float: right;
+    border: 1px solid #333333ab;
+    border-radius: 3rem;
+    transition: all 0.1s ease-in-out;
+    margin-right: 2rem;
+}
+
+.custom-button:hover {
     cursor: pointer;
     color: black;
-    background-color: #f7817e;
     text-decoration: none;
+    border: 1px solid #333;
     box-shadow: 3px 5px 5px rgba(0,0,0,0.25);
 }
 
 .delete-button-clicked-once {
-    width: 20rem !important;
     transition: all 0.2s ease-in-out;
 }
 
@@ -82,9 +105,6 @@ a {
 .progression-to-delete {
     background-color: #f7817e;
 }
-body {
-    background-color: #F7F9FB;
-}
 
 hr {
     border: 0;
@@ -112,3 +132,95 @@ hr {
     transition: all 0.1s ease-in-out;
 }
 
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-button-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.control-label {
+    margin-right: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.form-control {
+    border:none;
+    box-shadow: none;
+    background-color: #33333314;
+    border-radius: 0;
+    border-bottom: 1px solid #33333363;
+    transition: all 0.15s;
+    margin-top: 0.5rem;
+}
+
+.form-control:hover {
+    background-color: #33333325;
+    border-bottom: 1px solid #333;
+}
+
+.btn-default {
+    background-color: rgba(134, 194, 50, 0.8);
+    text-align: center;
+    padding: 1rem 2rem;
+    border: 1px solid #33333363;
+    border-radius: 3rem;
+    transition: all 0.1s ease-in-out;
+    width: 100%;
+    max-width: 20rem;
+}
+
+.btn-default:hover {
+    background-color: rgb(134, 194, 50);
+    border:1px solid #333;
+}
+
+#submit:active {
+    background-color: rgb(160, 211, 64);
+}
+
+.icon-container{
+    border-right: 4px solid #333;
+    margin-right: 1rem;
+}
+.exercise-icon {
+    max-width: 10.5rem;
+    max-height: 10rem;
+    padding: 0.5rem;
+}
+
+.exercise-title {
+    display: flex;
+    flex-direction: column;
+}
+
+.mental-exercise-form > .form {
+    display: block;
+}
+
+.mental-exercise-form > .form >  .form-group {
+    display: inline-block;
+    width: 100%;
+}
+
+.mental-exercise-form > .form > .form-group > .form-control {
+    height: 15rem;
+}

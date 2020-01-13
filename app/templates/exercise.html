@@ -25,6 +25,41 @@
         var holdDelay = 600;
         var holdActive = false;
 
+        $(document).ready(function(){
+
+           $('.notSelectable').disableSelection();
+
+        });
+
+        $.fn.extend({
+            disableSelection: function() {
+                this.each(function() {
+                    this.onselectstart = function() {
+                        return false;
+                    };
+                    this.unselectable = "on";
+                    $(this).css('-moz-user-select', 'none');
+                    $(this).css('-webkit-user-select', 'none');
+                });
+            }
+        });
+
+        var onlongtouch;
+        var timer;
+        var touchduration = 500; //length of time we want the user to touch before we do something
+
+        function touchstart() {
+            timer = setTimeout(onlongtouch, touchduration);
+        }
+
+        function touchend() {
+            //stops short touches from firing the event
+            if (timer)
+                clearTimeout(timer); // clearTimeout, not cleartimeout..
+        }
+
+        onlongtouch = function() { alert('touch')};
+
         del_button.click(function() {
             if (clicks == 0) {
                 $(this).addClass('delete-button-clicked-once');
@@ -35,15 +70,27 @@
                 $('.progression-to-delete').each(function () {
                     toDelete.push($(this).attr('id'));
                 });
-                $.ajax({
+                if (toDelete.length == 0) {
+                    $.ajax({
+                    url: '/delete_exercise',
+                    data: {exercise_name: exercise},
+                    type: 'GET',
+                    success: function (response) {
+                        window.location.replace(response)
+                    }
+                    });
+                } else {
+                    $.ajax({
                     url: '/delete_progression',
                     data: {toDelete_ids: toDelete, exercise: exercise},
                     type: 'GET',
                     success: function (response) {
                         window.location.replace(window.location.pathname)
                     }
-                });
-            };
+                    });
+                }
+
+            }
         });
 
         del_button.mouseleave(function () {

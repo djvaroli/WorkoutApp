@@ -12,6 +12,7 @@ from math import ceil
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), index=True, unique=True)
+    name = db.Column(db.String(20))
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     exercise = db.relationship('Exercise', backref='author',lazy='dynamic')
@@ -90,7 +91,7 @@ class Exercise(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(140))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-    # type = db.Column(db.String(15))
+    type = db.Column(db.String(15))
     progression = db.relationship('Progression', backref='exercise', lazy='dynamic')
 
     def __repr__(self):
@@ -129,10 +130,12 @@ class Progression(db.Model):
     weight = db.Column(db.Float)
     product = db.Column(db.Float)
     duration = db.Column(db.Float)
+    description = db.Column(db.String(500))
     progression_status = db.Column(db.String(20))
 
     def __repr__(self):
         return '<Exercise id : {}. Product: {} >'.format(self.exercise_id, self.product)
+
 
 
 # def calc_progression(self):

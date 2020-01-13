@@ -1,0 +1,10 @@
+Dear Administrator,
+
+A new user {{ user.email }} has created an account on the WorkoutApp.
+
+Full Information:
+Username: {{ user.username }}
+Email: {{ user.email }}
+Admin?: {{ user.is_admin}}
+
+Sincerely

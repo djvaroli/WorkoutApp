@@ -1,4 +1,4 @@
-Dear {{ user.username }},
+Dear {{ user.name }},
 
 Thank you for joining our community of people working towards a healthier and more enjoyable life!
 

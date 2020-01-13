@@ -3,10 +3,29 @@
 {% block app_content %}
     {% for user in users %}
         <div>
-            Name: {{ user.username }}. Visits: {{ user.visits }}
+            Name: {{ user.username }}. Email: {{ user.email }}. Visits: {{ user.visits }}. <a class = 'delete-user' id="{{ user.username }}" href="{{ url_for('main.user_stats')}}">Delete</a>
         </div>
     {% endfor %}
     <div>
         Num Users: {{ num_users }}. Total Visits: {{ total_visits }}
     </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script>
+        var user_delete = $('.delete-user');
+
+        user_delete.click( function () {
+            username = $(this).attr('id');
+            $.ajax({
+                    url: '/delete_user',
+                    data: {username: username},
+                    type: 'GET',
+                    success: function (response) {
+                        window.location.replace(window.location.pathname)
+                    }
+                });
+        });
+    </script>
 {% endblock %}

@@ -1,11 +1,8 @@
-<p>Dear {{ user.username }},</p>
+<p>Dear {{ user.name }},</p>
 <p>
     Thank you for joining our community of people working towards a healthier and more enjoyable life!
     You are one step of away from completing your profile and starting your workout journey!
-    All you have to do is click the link below!
-    <a href="{{ url_for('auth.confirm_email', token=token, _external=True) }}">
-        click here
-    </a>.
+    All you have to do is <a href="{{ url_for('auth.confirm_email', token=token, _external=True) }}">click here</a>!
 </p>
 <p>Alternatively, you can paste the following link in your browser's address bar:</p>
 <p>{{ url_for('auth.confirm_email', token=token, _external=True) }}</p>

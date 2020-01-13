@@ -3,7 +3,6 @@ from app.models import User, Exercise, Progression
 
 app = create_app()
 
-
 @app.shell_context_processor
 def make_shell_context():
-    return {'db': db, 'User': User, 'Exercise':Exercise, 'Progression':Progression}
+    return {'db': db, 'User': User, 'Exercise': Exercise, 'Progression':Progression}

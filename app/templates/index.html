@@ -10,24 +10,31 @@
 {% block app_content %}
     <table class="table table-hover">
         <tr>
-            <td width="256px"><img src="{{ user.avatar(256) }}"></td>
+{#            <td width="10rem"><img src="{{ user.avatar(256) }}"></td>#}
             <td>
-                <h1>{{ _('Welcome,') }} {{ user.username }}</h1>
+                <h1>{{ _('Welcome,') }} {{ user.name }}!</h1>
             </td>
+            <td></td>
         </tr>
     </table>
-    <hr>
-
-    <div class="exercises">
-        {% for exercise in exercises %}
-            <a class="exercise" href="{{ url_for('main.exercise', exercise_name=exercise.name) }}">{{ exercise.name }}</a>
-        {% endfor %}
-    </div>
 
     {% if form %}
         {{ wtf.quick_form(form) }}
         <br>
-        {% endif %}
+    {% endif %}
+
     <hr>
+
+    <div class="exercises">
+        {% for exercise in exercises %}
+            <a href="{{ url_for('main.exercise', exercise_name=exercise.name) }}">
+                <div class="exercise-container">
+                    <img class='exercise-icon'  src="{{ url_for('static',filename=exercise.type + '.png') }}">
+                    <div class="exercise-link">{{ exercise.name }}</div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+    Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 {% endblock %}
 
