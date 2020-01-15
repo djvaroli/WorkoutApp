@@ -71,3 +71,4 @@ AttributeError: 'NoneType' object has no attribute 'delete'
 2020-01-09 16:21:45,306 INFO: Workout App startup [in /Users/danielvaroli/Desktop/personal_website/workout_app/app/__init__.py:79]
 2020-01-09 19:48:18,655 INFO: Workout App startup [in /Users/danielvaroli/Desktop/personal_website/workout_app/app/__init__.py:79]
 2020-01-09 19:49:44,130 INFO: Workout App startup [in /Users/danielvaroli/Desktop/personal_website/workout_app/app/__init__.py:79]
+2020-01-13 12:32:54,710 INFO: Workout App startup [in /Users/danielvaroli/Desktop/personal_website/workout_app/app/__init__.py:79]

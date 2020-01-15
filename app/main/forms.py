@@ -58,21 +58,26 @@ def name_not_duplicate(form,field):
         raise ValidationError(_('Name already exists!'))
 
 class ExerciseForm(FlaskForm):
-    name = StringField(_l('Enter Exercise Name'), validators=[DataRequired(),no_special_chars, name_not_duplicate])
-    type = SelectField(_l('Select Exercise Type'), choices= [('repetition','Repetition Exercise'),
-                                             ('duration','Duration Exercise'),
-                                             ('mental','Mental Exercise'),
-                                             ], default='Repetition Exercise')
-    submit = SubmitField(_l('Add Exercise'))
+    name = StringField(_l('Enter&nbsp;Exercise&nbsp;Name'), validators=[DataRequired(),no_special_chars, name_not_duplicate])
+    type = SelectField(_l('Select&nbsp;Exercise&nbsp;Type'), choices= [('strength','Strength (weight)'),
+                                             ('endurance','Endurance (timed)'),
+                                             ('mental','Mental (life goals)'),
+                                             ], default='Strength (weight)')
+    submit = SubmitField(_l('+'))
 
-class ProgressionForm(FlaskForm):
-    reps = StringField(_l('Reps'), validators=[DataRequired(),input_is_int])
-    sets = StringField(_l('Sets'), validators=[DataRequired(),input_is_int])
+class ProgressionFormStrength(FlaskForm):
+    reps = StringField(_l('Reps'), validators=[DataRequired(), input_is_int])
+    sets = StringField(_l('Sets'), validators=[DataRequired(), input_is_int])
     weight = StringField(_l('Weight'), validators=[DataRequired(), input_is_int_or_float], default=0.0)
-    duration = StringField(_l('Duration'),validators=[DataRequired(), input_is_int_or_float],default=0.0)
-    submit = SubmitField(_l('Add Progression'))
+    submit = SubmitField(_l('+'))
 
 class ProgressionFormMental(FlaskForm):
-    description = TextAreaField(_l('Exercise Description'), validators=[DataRequired()])
-    submit = SubmitField(_l('Add Progression'))
+    description = TextAreaField(_l('Exercise&nbsp;Description'), validators=[DataRequired()])
+    submit = SubmitField(_l('+'))
+
+class ProgressionFormEndurance(FlaskForm):
+    sets = StringField(_l('Sets'), validators=[DataRequired(), input_is_int])
+    duration = StringField(_l('Duration'),validators=[DataRequired(), input_is_int_or_float],default=0.0)
+    submit = SubmitField(_l('+'))
+
 

@@ -1,0 +1,129 @@
+
+.form {
+    flex-wrap: nowrap;
+}
+
+.exercise-head {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.exercise-name {
+    display: initial;
+    margin-top: 0;
+}
+
+.progression-titles {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.delete-button {
+    background-color: #f7817eb3;
+}
+
+.delete-button:hover {
+    background-color: #f7817e;
+}
+.delete-button-clicked-once {
+    transition: all 0.2s ease-in-out;
+}
+
+#progression-container {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.15), 0 5px 5px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+#progressions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.progression {
+    display: flex;
+    justify-content: space-evenly;
+    width: calc(100% - 2rem);
+    padding: 2rem 0;
+    background-color: #A8D0E6;
+    transition: all 0.1s ease-in;
+}
+
+.progression-entry {
+    align-self: center;
+    /*width: 30%;*/
+    /*float: left;*/
+}
+
+.progression:hover {
+    cursor: pointer;
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.15), 0 5px 8px rgba(0,0,0,0.4);
+}
+
+.progression-completed {
+    background-color: #86C232;
+}
+
+.progression-to-delete {
+    background-color: #f7817e;
+}
+
+.delete-tag {
+    width: 6rem;
+    background-color: #f7817e;
+    transition: all 0.3s;
+}
+
+.delete-tag:hover {
+    cursor: pointer;
+}
+
+.delete-tag-clicked {
+    background-color: #c06362;
+}
+
+.delete-button {
+    width: 10rem;
+    text-align: center;
+    padding: 1rem 2rem;
+    float: right;
+    border: 1px solid #333;
+    border-radius: 3rem;
+    transition: all 0.1s ease-in-out;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-button-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon-container{
+    border-right: 4px solid #333;
+    margin-right: 1rem;
+}
+.exercise-icon {
+    max-width: 10.5rem;
+    max-height: 10rem;
+    padding: 0.5rem;
+}
+
+.exercise-title {
+    display: flex;
+    flex-direction: column;
+}
+
+

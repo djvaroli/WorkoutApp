@@ -13,15 +13,15 @@
         {{ wtf.quick_form(form) }}
     {% endif %}
 
-{#    <div class="exercises-title" style="font-size: 5rem;">Exercises</div>#}
+    <div class="exercises-title" style="font-size: 5rem;">Exercises</div>
     <hr>
     <div class="exercises">
 
         {% for exercise in exercises %}
-            <a href="{{ url_for('main.exercise', exercise_name=exercise.name) }}">
+            <a href="{{ url_for('main.exercises', exercise_name=exercise.name) }}">
                 <div class="exercise-container">
                     <img class='exercise-icon'  src="{{ url_for('static',filename='img/' + exercise.type + '.png') }}">
-                    <div class="exercise-link">{{ exercise.name.replace('_',' ') }}</div>
+                    <div class="exercise-link">{{ exercise.name }}</div>
                 </div>
             </a>
         {% endfor %}

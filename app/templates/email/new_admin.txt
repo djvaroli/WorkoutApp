@@ -1,0 +1,6 @@
+Dear {{ user.name }},
+
+You have been granted administrator privileges for the WorkoutApp.
+
+Sincerely,
+The WorkoutApp Team

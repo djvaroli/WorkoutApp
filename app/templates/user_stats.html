@@ -3,7 +3,8 @@
 {% block app_content %}
     {% for user in users %}
         <div>
-            Name: {{ user.username }}. Email: {{ user.email }}. Visits: {{ user.visits }}. <a class = 'delete-user' id="{{ user.username }}" href="{{ url_for('main.user_stats')}}">Delete</a>
+            Name: {{ user.username }}. Email: {{ user.email }}. Visits: {{ user.visits }}. <a class = 'delete-user' id="{{ user.username }}" href="{{ url_for('main.user_stats')}}">Delete</a>.
+        <a class = 'make-user-admin' id="{{ user.username }}" href="{{ url_for('main.user_stats')}}">Make Admin</a>
         </div>
     {% endfor %}
     <div>
@@ -15,11 +16,24 @@
     {{ super() }}
     <script>
         var user_delete = $('.delete-user');
+        var userMakeAdmin = $('.make-user-admin')
 
         user_delete.click( function () {
             username = $(this).attr('id');
             $.ajax({
                     url: '/delete_user',
+                    data: {username: username},
+                    type: 'GET',
+                    success: function (response) {
+                        window.location.replace(window.location.pathname)
+                    }
+                });
+        });
+
+        userMakeAdmin.click( function () {
+            username = $(this).attr('id');
+            $.ajax({
+                    url: '/make_admin',
                     data: {username: username},
                     type: 'GET',
                     success: function (response) {

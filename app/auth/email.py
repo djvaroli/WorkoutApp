@@ -27,3 +27,10 @@ def send_new_user_email(user):
                recipients=[current_app.config['ADMINS'][1]],
                text_body=render_template('email/new_user.txt', user=user),
                html_body=render_template('email/new_user.html', user=user))
+
+def new_admin_email(user):
+    send_email(_('[WorkoutA] Administrator Priviliges)'),
+               sender=current_app.config['ADMINS'][0],
+               recipients=[user.email],
+               text_body=render_template('email/new_admin.txt',user=user),
+               html_body=render_template('email/new_admin.html',user=user))

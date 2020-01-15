@@ -2,8 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3362e521-09d2-452f-959f-53c58afb4b02" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/static/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/css/progressions.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/js/exercise.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/js/forms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/add_exercise.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/email/new_admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/email/new_admin.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/exercises.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workout_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workout_app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/email.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/email.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/auth/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/auth/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/duration.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/img/duration.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/mental.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/img/mental.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/plus.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/img/plus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/progressions.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/repetition.png" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/img/strength.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/_exercise.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/_exercise.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/_progression.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/_progression.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/exercise.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/exercise.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/user_stats.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/user_stats.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/workout_app.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/workout_app.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +56,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv/include" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -81,7 +112,9 @@
       <updated>1578376275143</updated>
       <workItem from="1578376276347" duration="6936000" />
       <workItem from="1578495113876" duration="8993000" />
-      <workItem from="1578585115236" duration="25277000" />
+      <workItem from="1578585115236" duration="31305000" />
+      <workItem from="1578936769697" duration="19745000" />
+      <workItem from="1579101767752" duration="546000" />
     </task>
     <servers />
   </component>

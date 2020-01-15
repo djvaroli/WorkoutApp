@@ -1,14 +1,20 @@
-
-<div class="progression progression{{progression.progression_status}}" id="progression-{{ progression.id }}">
-    {% if progression.sets %}
-        <div class="progression-entry notSelectable">{{ progression.sets }}</div>
-        <div class="progression-entry notSelectable">{{ progression.reps }}</div>
-        <div class="progression-entry notSelectable">{{ progression.weight }}</div>
-        <div class="progression-entry notSelectable">{{ progression.duration }}</div>
-    {% else %}
-        <div class="progression-text notSelectable">{{ progression.description }}</div>
-    {% endif %}
+<div id="progression-container">
+   <div class="progression progression{{progression.progression_status}}" id="progression-{{ progression.id }}">
+        {% if progression.weight != None %}
+            <div class="progression-entry notSelectable">{{ progression.sets }}</div>
+            <div class="progression-entry notSelectable">{{ progression.reps }}</div>
+            <div class="progression-entry notSelectable">{{ progression.weight }}</div>
+        {% elif progression.duration != None %}
+            <div class="progression-entry notSelectable">{{ progression.sets }}</div>
+            <div class="progression-entry notSelectable">{{ progression.duration }}</div>
+        {% else  %}
+            <div class="progression-text notSelectable">{{ progression.description }}</div>
+        {% endif %}
+    </div>
+    <div class="delete-tag" id = "delete-tag-{{ progression.id }}">Remove</div>
 </div>
+
+
 
 
 

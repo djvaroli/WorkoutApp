@@ -100,3 +100,4 @@ def confirm_email(token):
     db.session.commit()
     flash('Thank you for confirming your email!')
     return redirect(url_for('auth.login'))
+

@@ -28,6 +28,9 @@ class User(UserMixin, db.Model):
     def make_admin(self):
         if self.email in current_app.config['ADMINS']:
             self.is_admin = True
+            db.session.commit()
+            return 'User now admin'
+        return "User does not have the right privileges"
 
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
